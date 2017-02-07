@@ -49,7 +49,7 @@ PermitEmptyPasswords no
 ChallengeResponseAuthentication no
 
 # Change to no to disable tunnelled clear text passwords
-#PasswordAuthentication yes
+PasswordAuthentication yes
 
 # Kerberos options
 #KerberosAuthentication no
@@ -68,7 +68,7 @@ PrintLastLog yes
 TCPKeepAlive yes
 #UseLogin no
 
-#MaxStartups 10:30:60
+#MaxStartups 5:30:20
 #Banner /etc/issue.net
 
 # Allow client to pass locale environment variables
@@ -87,3 +87,5 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 PermitRootLogin no
+ClientAliveInterval 10m
+ClientAliveCountMax 6
